@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-4">
+      <div class="card-header pb-0">
+        <div class="row">
+          <div class="col-6 d-flex align-items-center">
+            <h6 class="mb-0">Customers</h6>
+          </div>
+        </div>
+      </div>
+      <div class="card-body px-0 pt-0 pb-2">
+        <div class="table-responsive p-0">
+          <table class="table align-items-center mb-0">
+            <thead>
+            <tr>
+              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">First Name</th>
+              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Last Name</th>
+              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date Of Birth</th>
+              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Email</th>
+              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Country</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @customers.each do |customer| %>
+              <tr>
+                <td>
+                  <p class="text-xs font-weight-bold mb-0"><%= customer.TCustomer_firstname %></p>
+                </td>
+                <td>
+                  <p class="text-xs font-weight-bold mb-0"><%= customer.TCustomer_lastname %></p>
+                </td>
+                <td>
+                  <p class="text-xs font-weight-bold mb-0"><%= customer.TCustomer_birth_date %></p>
+                </td>
+                <td>
+                  <p class="text-xs font-weight-bold mb-0"><%= customer.TCustomer_email %></span></p>
+                </td>
+                <td class="align-middle">
+                  <span class="text-secondary text-xs font-weight-bold"><%= customer.country %></span>
+                </td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

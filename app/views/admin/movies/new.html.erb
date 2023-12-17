@@ -1,0 +1,103 @@
+<div class="row justify-content-center">
+  <div class="col-6">
+    <div class="card mb-4">
+      <div class="card-header pb-0">
+        <div class="row">
+          <div class="col-6 d-flex align-items-center">
+            <h6 class="mb-0">New Movie Details</h6>
+          </div>
+        </div>
+      </div>
+      <div class="card-body px-0 pt-0 pb-2">
+        <%= form_with model: @movie, url: admin_movies_path, multipart: true do |form| %>
+          <div class="row">
+            <div class="col-3">
+              <%= form.label :title %>
+            </div>
+            <div class="col-6">
+              <%= form.text_field :title, class: 'form-control', placeholder: 'Movie Title', aria: { label: 'Title' }, required: true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <%= form.label :genre %>
+            </div>
+            <div class="col-6">
+              <%= form.text_field :genre, class: 'form-control', placeholder: 'Movie Genre', aria: { label: 'Genre' }, required: true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <%= form.label :director %>
+            </div>
+            <div class="col-6">
+              <%= form.text_field :director, class: 'form-control', placeholder: 'Movie Director', aria: { label: 'Director' }, required: true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <%= form.label :actors %>
+            </div>
+            <div class="col-6">
+              <%= form.text_field :actors, class: 'form-control', placeholder: 'Movie Actors', aria: { label: 'Actors' }, required: true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <%= form.label 'Length (Mins)' %>
+            </div>
+            <div class="col-6">
+              <%= form.text_field :length, class: 'form-control', placeholder: 'Movie Length', aria: { label: 'Length' }, required: true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <%= form.label 'Release (Year)' %>
+            </div>
+            <div class="col-6">
+              <%= form.text_field :release, class: 'form-control', placeholder: 'Release Year', aria: { label: 'Release' }, required: true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <%= form.label :description %>
+            </div>
+            <div class="col-6">
+              <%= form.text_field :des, class: 'form-control', placeholder: 'Movie Description', aria: { label: 'Description' }, required: true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <%= form.label :cover_image, 'Upload Cover Image' %>
+            </div>
+            <div class="col-6">
+              <%= form.file_field :cover_image, class: 'form-control-file', id: 'coverImage', accept: 'image/*' %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <%= form.label :movie_content, 'Upload Movie' %>
+            </div>
+            <div class="col-6">
+              <%= form.file_field :movie_content, class: 'form-control-file', id: 'movieContent', accept: 'video/mp4, video/webm' %>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="text-center">
+                <%= link_to 'Cancel', admin_movies_path, class: 'btn bg-gradient-danger w-100 mt-4 mb-0' %>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="text-center">
+                <%= form.submit 'Add', class: 'btn bg-gradient-info w-100 mt-4 mb-0' %>
+              </div>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
